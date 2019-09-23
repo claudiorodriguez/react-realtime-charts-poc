@@ -15,9 +15,9 @@
     "lint": "yarn run lint:scripts && yarn run lint:styles",
     "lint:scripts": "tsc --noEmit -p './tsconfig.jest.json' && tslint './src/**/*.{ts,tsx}' -t verbose",
     "lint:styles": "stylelint --ignore-path .gitignore '**/*.css'",
-    "test": "echo 'TODO: write tests' && exit 0",
+    "test": "jest --coverage",
     "start": "webpack-dev-server",
-    "precommit": "pretty-quick --staged && yarn run lint",
+    "precommit": "pretty-quick --staged && yarn run lint && yarn run test",
     "prepush": "yarn run test"
   },
   "devDependencies": {
@@ -84,7 +84,7 @@
       "node"
     ],
     "moduleNameMapper": {
-      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__tests__/fileMock.js",
       "\\.(css)$": "identity-obj-proxy"
     },
     "testRegex": "__tests__/.*\\.spec\\.(jsx?|tsx?)$",

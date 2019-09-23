@@ -27,6 +27,10 @@ export const App = () => {
         // Ignore errors
       }
     };
+
+    return () => {
+      source.close();
+    };
   }, []);
 
   return (
