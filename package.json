@@ -1,0 +1,98 @@
+{
+  "name": "react-realtime-charts-poc",
+  "version": "0.0.0-NO-RELEASE",
+  "private": true,
+  "main": "dist/client/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/claudiorodriguez/react-realtime-charts-poc.git"
+  },
+  "author": "Claudio Rodriguez <cjrodr@yahoo.com>",
+  "license": "MIT",
+  "scripts": {
+    "prebuild": "rimraf './dist'",
+    "build": "NODE_ENV=production webpack -p",
+    "lint": "yarn run lint:scripts && yarn run lint:styles",
+    "lint:scripts": "tsc --noEmit -p './tsconfig.jest.json' && tslint './src/**/*.{ts,tsx}' -t verbose",
+    "lint:styles": "stylelint --ignore-path .gitignore '**/*.css'",
+    "test": "echo 'TODO: write tests' && exit 0",
+    "start": "webpack-dev-server",
+    "precommit": "pretty-quick --staged && yarn run lint",
+    "prepush": "yarn run test"
+  },
+  "devDependencies": {
+    "@types/classnames": "^2.2.9",
+    "@types/jest": "^24.0.18",
+    "@types/react-dom": "^16.9.0",
+    "@types/react-test-renderer": "^16.9.0",
+    "autoprefixer": "^9.6.1",
+    "classnames": "^2.2.6",
+    "css-loader": "^3.2.0",
+    "css-modules-typescript-loader": "^3.0.1",
+    "file-loader": "^4.2.0",
+    "highcharts": "^7.2.0",
+    "highcharts-react-official": "^2.2.2",
+    "husky": "^3.0.5",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^24.9.0",
+    "mini-css-extract-plugin": "^0.8.0",
+    "postcss-loader": "^3.0.0",
+    "postcss-nested": "^4.1.2",
+    "prettier": "^1.18.2",
+    "pretty-quick": "^1.11.1",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-test-renderer": "^16.9.0",
+    "rimraf": "^3.0.0",
+    "style-loader": "^1.0.0",
+    "stylelint": "^11.0.0",
+    "stylelint-config-mailonline": "^4.0.0",
+    "terser-webpack-plugin": "^2.1.0",
+    "ts-jest": "^24.1.0",
+    "ts-loader": "^6.1.2",
+    "tslint": "^5.20.0",
+    "tslint-config-mailonline": "^4.0.0",
+    "typescript": "^3.6.3",
+    "url-loader": "^2.1.0",
+    "webpack": "^4.40.2",
+    "webpack-cli": "^3.3.9",
+    "webpack-dev-server": "^3.8.1"
+  },
+  "browsers": [
+    "> 1%",
+    "last 3 versions"
+  ],
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.(ts|tsx)"
+    ],
+    "coveragePathIgnorePatterns": [
+      "\\.d\\.ts$",
+      "/__tests__/"
+    ],
+    "globals": {
+      "ts-jest": {
+        "tsConfig": "tsconfig.jest.json"
+      }
+    },
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ],
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css)$": "identity-obj-proxy"
+    },
+    "testRegex": "__tests__/.*\\.spec\\.(jsx?|tsx?)$",
+    "transform": {
+      "^.+\\.(t|j)sx?$": "ts-jest"
+    },
+    "transformIgnorePatterns": [
+      "/node_modules/.*"
+    ]
+  }
+}
