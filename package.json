@@ -30,7 +30,7 @@
     "css-loader": "^3.2.0",
     "css-modules-typescript-loader": "^3.0.1",
     "file-loader": "^4.2.0",
-    "highcharts": "^7.2.0",
+    "highcharts": "^9.0.0",
     "highcharts-react-official": "^2.2.2",
     "husky": "^3.0.5",
     "identity-obj-proxy": "^3.0.0",
